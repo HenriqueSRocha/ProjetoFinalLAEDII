@@ -1,2 +1,2 @@
 # ProjetoFinalLAEDII
-Projeto final LAEDII
+Projeto monitoramento do consumo de energia elétrica
