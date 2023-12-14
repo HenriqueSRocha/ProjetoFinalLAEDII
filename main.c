@@ -23,9 +23,8 @@ int main()
 
     do
     {
+        cria(&lista); // Cria a lista
         continuar = menu(&lista, dadosLidos, arquivo); // Imprime o menu
-        // preencheLista(&lista, dadosLidos, arquivo); // Coloca os dados do arquivo na lista
-        // imprimeLista(lista);    // Imprime os dados da lista
     } while (continuar != 0);
 
     return 0;
