@@ -2,11 +2,11 @@
     Projeto Monitoramento do Consumo de Energia Elétrica
 
     Henrique de Souza Rocha
-    Andre Magalhaes Bastos
+    Andre Luiz Magalhaes
 
     Novembro de 2023
 
-    compilar: gcc main funcoes.c lib.c -o main
+    compilar: gcc main funcoes.c lib.c -o monitoramento
  */
 
 #include <stdio.h>
