@@ -145,6 +145,7 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
         printf("Opção invalida!\n\n");
         return 0;
     }
+    return 0;
 }
 void maiorLista(Lista lista) // Busca o maior valor da lista
 {
