@@ -16,14 +16,12 @@ int main()
 {
     FILE *arquivo;
     dado dadosLidos;
-    char linha[50];
     Lista lista;
-    cria(&lista); // Cria a lista
     int continuar;
 
     do
     {
-        cria(&lista); // Cria a lista
+        cria(&lista);                                  // Cria a lista
         continuar = menu(&lista, dadosLidos, arquivo); // Imprime o menu
     } while (continuar != 0);
 

@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include "lib.h"
-#include <unistd.h>
+#include <stdlib.h>     // Biblioteca para usar o malloc
+#include "lib.h"        // Biblioteca com as estruturas e funções
 
 void cria(Lista *lst) // Cria a lista
 {
@@ -80,10 +79,10 @@ void imprimeLista(Lista *lista) // Imprime os dados da lista
 
 int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
 {
-    int opcao, opcao2, opcao3;
+    int opcao = 0, opcao2 = 0, opcao3 = 0;
     float potencia;
 
-    printf("\nDigite a opção de sejada:\n");
+    printf("Digite a opção de sejada:\n\n");
     printf("1 - Imprimir a lista\n");
     printf("2 - Buscar potencia\n");
     printf("3 - Sair\n");
@@ -94,7 +93,7 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
     {
     case 1: // Imprime a lista
         printf("\e[H\e[2J");
-        printf("\nDigite a opção de sejada:\n");
+        printf("\nDigite a opção de sejada:\n\n");
         printf("1 - Imprimir a lista pela data e hora\n");
         printf("2 - Imprimir a lista pela potencia\n");
         scanf("%d", &opcao2);
@@ -110,13 +109,13 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
             imprimeLista(lista);
             break;
         default:    // Opção inválida
-            printf("Opcao invalida!\n");
+            printf("Opcao invalida!\n\n");
             return 0;
         }
         break;
     case 2:       // Busca uma potencia
         printf("\e[H\e[2J");
-        printf("\nDigite a opção de sejada:\n");
+        printf("\nDigite a opção de sejada:\n\n");
         printf("1 - Buscar maior potencia\n");
         printf("2 - buscar menor potencia\n");
         printf("3 - buscar potencia especifica\n");
@@ -139,7 +138,7 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
             buscarPotencia(lista, potencia);
             break;
         default:
-            printf("Opcao invalida!\n");
+            printf("Opcao invalida!\n\n");
             return 0;
         }
         break;
@@ -147,7 +146,7 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
         return 0;
     default: // Opção inválida
         printf("\e[H\e[2J");
-        printf("Opção inválida!\n");
+        printf("Opção invalida!\n\n");
         return 0;
     }
 }
@@ -171,7 +170,7 @@ void maiorLista(Lista lista) // Busca o maior valor da lista
         }
         aux = aux->prox;
     }
-    printf("\nMAIOR Potencia: %.2f[W] -  %02d:%02d:%02d  %02d-%02d-%04d\n\n", maior->dados.numero, maior->dados.hora,
+    printf("\nMAIOR Potencia: %.2f[W] -  %02d:%02d:%02d  %02d-%02d-%04d\n\n\n", maior->dados.numero, maior->dados.hora,
            maior->dados.minuto, maior->dados.segundo, maior->dados.dia, maior->dados.mes, maior->dados.ano);
 }
 
@@ -195,7 +194,7 @@ void menorLista(Lista lista) // Busca o menor valor da lista
         }
         aux = aux->prox;
     }
-    printf("\nMENOR Potencia: %.2f[W] -  %02d:%02d:%02d  %02d-%02d-%04d\n\n", menor->dados.numero, menor->dados.hora,
+    printf("\nMENOR Potencia: %.2f[W] -  %02d:%02d:%02d  %02d-%02d-%04d\n\n\n", menor->dados.numero, menor->dados.hora,
            menor->dados.minuto, menor->dados.segundo, menor->dados.dia, menor->dados.mes, menor->dados.ano);
 }
 void ordenaLista(Lista *lista) // Ordena a lista
@@ -241,16 +240,14 @@ void buscarPotencia(Lista *lista, float potenciaBuscada)    // Busca uma potenci
 
     Node *atual = lista->primeiro;
     int encontrado = 0;
-
+    printf("\n");
     do
     {
         if (atual->dados.numero == potenciaBuscada)
         {
             encontrado = 1;
-            printf("\nPotencia %.2f encontrada na lista:\n", potenciaBuscada);
-            printf("\nPotencia: %.2f[W] -  %02d:%02d:%02d  %02d-%02d-%04d\n\n", atual->dados.numero, atual->dados.hora,
+            printf("Potencia: %.2f[W] -  %02d:%02d:%02d  %02d-%02d-%04d\n", atual->dados.numero, atual->dados.hora,
                    atual->dados.minuto, atual->dados.segundo, atual->dados.dia, atual->dados.mes, atual->dados.ano);
-            break;
         }
         atual = atual->prox;
     } while (atual != lista->primeiro);

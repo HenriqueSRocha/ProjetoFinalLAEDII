@@ -1,4 +1,4 @@
-    #include <windows.h>
+#include <windows.h>
 #include <stdio.h>
 #include <time.h>  // Adicionado para usar as funcoes relacionadas ao tempo
 #include <unistd.h>  // Adicionado para usar a funcao sleep
