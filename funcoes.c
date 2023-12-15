@@ -92,8 +92,7 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
     switch (opcao)
     {
     case 1: // Imprime a lista
-        printf("\e[H\e[2J");
-        printf("\nDigite a opção de sejada:\n\n");
+        printf("\nDigite a opcao de sejada:\n\n");
         printf("1 - Imprimir a lista pela data e hora\n");
         printf("2 - Imprimir a lista pela potencia\n");
         scanf("%d", &opcao2);
@@ -114,8 +113,7 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
         }
         break;
     case 2:       // Busca uma potencia
-        printf("\e[H\e[2J");
-        printf("\nDigite a opção de sejada:\n\n");
+        printf("\nDigite a opcao de sejada:\n\n");
         printf("1 - Buscar maior potencia\n");
         printf("2 - buscar menor potencia\n");
         printf("3 - buscar potencia especifica\n");
@@ -131,7 +129,6 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
             menorLista(*lista);
             break;
         case 3: // Busca uma potencia especifica
-            printf("\e[H\e[2J");
             printf("Digite a potencia desejada: ");
             scanf("%f", &potencia);
             preencheLista(lista, dadosLidos, arquivo);
@@ -145,7 +142,6 @@ int menu(Lista *lista, dado dadosLidos, FILE *arquivo) // Imprime o menu
     case 3: // Sai do programa
         return 0;
     default: // Opção inválida
-        printf("\e[H\e[2J");
         printf("Opção invalida!\n\n");
         return 0;
     }
